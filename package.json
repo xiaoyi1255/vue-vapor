@@ -1,0 +1,27 @@
+{
+  "name": "vue-projects-workspace",
+  "version": "1.0.0",
+  "description": "Vue项目工作空间，包含vite-vue3和vue-vapor两个项目",
+  "private": true,
+  "workspaces": [
+    "vite-vue3",
+    "vue-vapor"
+  ],
+  "scripts": {
+    "install:all": "pnpm install --recursive",
+    "dev:vite-vue3": "cd vite-vue3 && pnpm dev",
+    "dev:vue-vapor": "cd vue-vapor && pnpm dev",
+    "dev": "concurrently \"pnpm dev:vite-vue3\" \"pnpm dev:vue-vapor\"",
+    "build:vite-vue3": "cd vite-vue3 && pnpm build",
+    "build:vue-vapor": "cd vue-vapor && pnpm build",
+    "build": "pnpm build:vite-vue3 && pnpm build:vue-vapor",
+    "preview:vite-vue3": "cd vite-vue3 && pnpm preview",
+    "preview:vue-vapor": "cd vue-vapor && pnpm preview"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "all": "^0.0.0"
+  }
+}
